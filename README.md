@@ -4,7 +4,7 @@
 
 Ziggeo API  
 rails_12factor  
-rspec  
+rspec
 
 ## Research/Concept
 
@@ -65,5 +65,5 @@ https://trello.com/b/ILoYceCu/familystory
 
 ---
 
-###Thanks for checking it out!  
+###Thanks for checking it out!
 ###Please reach out if you have any questions or contributions.
