@@ -1,11 +1,5 @@
 ## FamilyStory
 
-#### Resources/Gems:
-
-Ziggeo API  
-rails_12factor  
-rspec
-
 ## Research/Concept
 
 FamilyStory is a social network but one meant to allow family members to share the stories that all families have, all in one place. It uses collective wisdom to build a narrative history that emerges from individuals contributing their own memories in their own words to share with each other and generations to come. This is the record of a family and a way to connect - over time and space - with those who mean the most.
@@ -16,7 +10,7 @@ Welcome to the family!
 
 ## How it Works
 
-FamilyStory allows users to create a profile as a family member and record a video introduction where they answer questions about themselves and share their favorite stories about their family.
+FamilyStory allows users to create a profile as a family member with their information and record a video introduction where they answer questions about themselves and share their favorite stories about their family. They can also comment on any other family member's profile.
 
 ## Data Model:
 
@@ -40,18 +34,21 @@ FamilyStory allows users to create a profile as a family member and record a vid
 | content     |
 | commentee   |
 
-##Wireframes
+##Sketches
 
-####The 'back-of-the-napkin' sketch I did in a moment of frenzied brainstorming:
+####the 'back-of-the-napkin' sketch I did in a moment of frenzied brainstorming:
 ![Alt text](/sketches/FamilyStorySketch.JPG)
 
-####Data Models:
+####data models:
 ![Alt text](/sketches/FamilyStoryDataModels.JPG)
 
-####Wireframes:
+####:basic sitemap
+![Alt text](/sketches/FamilyStorySitemap.JPG)
+
+####a couple sample wireframes:
 ![Alt text](/sketches/FamilyStoryWireframe.JPG)
 
-##Documentation:
+##API Documentation:
 
 https://www.ziggeo.com/docs
 
