@@ -42,7 +42,7 @@ FamilyStory allows users to create a profile as a family member with their infor
 ####data models:
 ![Alt text](/sketches/FamilyStoryDataModels.JPG)
 
-####:basic sitemap
+####basic sitemap
 ![Alt text](/sketches/FamilyStorySitemap.JPG)
 
 ####a couple sample wireframes:
