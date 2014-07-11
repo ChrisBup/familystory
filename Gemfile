@@ -43,3 +43,5 @@ group :development, :test do
  gem 'pry-nav'
  gem 'rspec-rails', '~> 2.14.2'
 end
+
+gem 'sorcery'

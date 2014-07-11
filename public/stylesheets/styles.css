@@ -11,3 +11,31 @@ li{
   border-radius: 5px;
   width: 500px;
 }
+
+.right {}
+
+.left {}
+
+.form-div {}
+
+.container {}
+
+h1, h2, h3, h4, p {}
+
+label {
+  float: left;
+  width: 140px;
+  padding-top: 5px;
+  text-align: right;
+}
+
+input[type=text], input[type=password] {
+  width: 280px;
+}
+
+input[type=submit] {
+  display: inline-block;
+  float: right;
+}
+
+input.error { border: 2px solid red; }

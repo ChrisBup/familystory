@@ -1,0 +1,31 @@
+<div class="intro">
+
+  <h1>Welcome to FamilyStory!</h1>
+
+  <h3>You know those stories that all families have? FamilyStory is the place to share them!</h3>
+
+  <h3>It collects those stories from each family member who contributes their own memories in their own words, to build a narrative history of a family to last for generations to come.</h3>
+
+  <h3>It's a small way to create a broad picture of a family, to keep a record of it's many stories and to connect&mdash;over time and space&mdash;with those who mean the most.</h3>
+
+  <h1>How it Works</h1>
+
+  <h3>First, join the family! Create a profile as a family member with your name, date of birth, city you live in and a short biography.</h3>
+
+  <h3>Next, record your video! This is where you answer questions about your most memorable family moments</h3>
+
+  <h3>Then comment on any other family member's profile and start sharing stories!</h3>
+
+</div>
+
+<% if current_member %>
+
+  <h2>welcome to the family!<h2>
+  <h3><%= link_to 'see the family', members_path(current_member) %></h3>
+
+<% else %>
+
+  <h2>not a meber of the family yet?<h2>
+  <h3><%= link_to 'join the family', new_member_path %><h3>
+
+<% end %>

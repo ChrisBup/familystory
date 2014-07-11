@@ -1,0 +1,20 @@
+<h2>join the family</h2>
+
+<%= form_for @member do |f| %>
+  <%= f.text_field :email, :placeholder => "email" %>
+  <%= f.text_field :email_confirmation, :placeholder => "email_confirmation" %>
+  <%= f.password_field :password, :placeholder => "password" %>
+  <%= f.password_field :password_confirmation, :placeholder => "password confirmation" %>
+  <%= f.text_field :dob, :placeholder => "date of birth" %>
+  <%= f.text_field :city, :placeholder => "city" %>
+  <%= f.text_field :bio, :placeholder => "bio" %>
+  <%= f.submit %>
+<% end %>
+
+<% if @member.errors.any? %>
+  <%= render 'errors' %>
+<% end %>
+
+
+
+

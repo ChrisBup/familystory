@@ -1,0 +1,13 @@
+<div class="form-div">
+
+  <h2>edit profile</h2>
+
+  <% if @member.errors.any? %>
+    <%= render 'errors' %>
+  <% end %>
+
+  <%= render 'form' %>
+
+  <h2>create your video</h2>
+
+</div>

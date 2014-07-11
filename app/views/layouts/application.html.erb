@@ -8,7 +8,27 @@
 </head>
 <body>
 
-<%= yield %>
+  <nav>
+    <%= link_to 'FamilyStory', root %>
+    <span class="right">
+      <% if current_member %>
+        <a href="/members/<%= current_member.id %>/edit">edit profile</a>
+        <%= link_to 'logout', logout_path, method: :delete %>
+      <% else %>
+        <%= link_to 'signup', signup_path %>
+        <%= link_to 'login', login_path %>
+      <% end %>
+    </span>
+  </nav>
+
+  <div class="container">
+    <% if current_member %>
+      <p> Hi, <%= current_member.name %> ! </p>
+    <% else %>
+      <%= link_to 'Not a member yet? join the family!', signup_path %>
+    <% end %>
+    <%= yield %>
+  </div>
 
 </body>
 </html>
