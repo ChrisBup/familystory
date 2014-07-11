@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <title>FamilyStory</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+
+    <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
+    <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
+
+      <script type='text/template' id='member-template'>
+        name: <%- name %>
+
+        <button data-action='delete'>delete</button>
+        <button data-action='edit'>edit</button>
+      </script>
+      <script type='text/template' id='edit-member-template'>
+        <form>
+          <input type='text' placeholder='<%- name %>'>
+
+        </form>
+      </script>
+
+      <script type="text/javascript" src='javascripts/backbone/app.js'></script>
+
+      <script type="text/javascript" src='javascripts/backbone/models/member.js'></script>
+
+      <script type="text/javascript" src='javascripts/backbone/collections/memberCollection.js'></script>
+
+      <script type="text/javascript" src='javascripts/backbone/views/members/memberView.js'></script>
+
+      <script type="text/javascript" src='javascripts/backbone/views/members/memberListView.js'></script>
+
+  </head>
+  <body>
+
+  <form class='member-form'>
+    <input type="text" name='member-name'>
+  </form>
+
+  <ul class='members'></ul>
+
+  </body>
+</html>
