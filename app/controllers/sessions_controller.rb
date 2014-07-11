@@ -6,8 +6,9 @@
   def create
     member = login(params[:email], params[:password])
     if member
-      redirect_to root_path
+      redirect_back_or_to root_path, :notice => "logged in"
     else
+      flash.now.alert = "email or password was invalid"
       render :_form
     end
   end

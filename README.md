@@ -36,16 +36,13 @@ FamilyStory allows users to create a profile as a family member with their infor
 
 ##Sketches
 
-####the 'back-of-the-napkin' sketch I did in a moment of frenzied brainstorming:
-![Alt text](/sketches/FamilyStorySketch.JPG)
-
-####data models:
+####data models
 ![Alt text](/sketches/FamilyStoryDataModels.JPG)
 
 ####basic sitemap
 ![Alt text](/sketches/FamilyStorySitemap.JPG)
 
-####a couple sample wireframes:
+####sample wireframes
 ![Alt text](/sketches/FamilyStoryWireframe.JPG)
 
 ##API Documentation:
