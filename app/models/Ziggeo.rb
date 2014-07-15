@@ -8,7 +8,10 @@ require_relative "classes/ZiggeoStreams"
 require_relative "classes/ZiggeoAuthtokens"
 require_relative "classes/ZiggeoAuth"
 
-@ziggeo = Ziggeo.new(ENV.fetch('ZIGGEO_APPLICATION_TOKEN'), ENV.fetch('ZIGGEO_PRIVATE_KEY'), ENV.fetch('ZIGGEO_ENCRYPTION_KEY'));
+@ziggeo = Ziggeo.new(ENV.fetch('ZIGGEO_APPLICATION_TOKEN'),
+  ENV.fetch('ZIGGEO_PRIVATE_KEY'),
+  ENV.fetch('ZIGGEO_ENCRYPTION_KEY')
+);
 
 class Ziggeo
 
