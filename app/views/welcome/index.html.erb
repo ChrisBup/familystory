@@ -1,31 +1,126 @@
-<div class="intro">
+  <div id="main-carousel-id" class="carousel slide" data-ride="carousel">
 
-  <h1>Welcome to FamilyStory!</h1>
+    <div class="carousel-inner">
 
-  <h3>You know those stories that all families have? FamilyStory is the place to share them!</h3>
+      <div class="item active">
+        <%= image_tag "slidepic1.jpg" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h3>All families have stories.</h3>
+          </div>
+        </div>
+      </div>
 
-  <h3>It collects those stories from each family member who contributes their own memories in their own words, to build a narrative history of a family to last for generations to come.</h3>
+      <div class="item">
+        <%= image_tag "slidepic2.jpg" %>
+        <div class="container">
+        </div>
+      </div>
 
-  <h3>It's a small way to create a broad picture of a family, to keep a record of it's many stories and to connect&mdash;over time and space&mdash;with those who mean the most.</h3>
+      <div class="item">
+        <%= image_tag "slidepic3.jpg" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h3>Now, there's a way to hold on to those stories.</h3>
+          </div>
+        </div>
+      </div>
 
-  <h1>How it Works</h1>
+      <div class="item">
+        <%= image_tag "slidepic4.jpg" %>
+        <div class="container">
+        </div>
+      </div>
 
-  <h3>First, join the family! Create a profile as a family member with your name, date of birth, city you live in and a short biography.</h3>
+      <div class="item">
+        <%= image_tag "slidepic5.jpg" %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h3>Share your stories those who mean the most.</h3>
+          </div>
+        </div>
+      </div>
 
-  <h3>Next, record your video! This is where you answer questions about your most memorable family moments</h3>
+    </div><!-- /.carousel-inner -->
 
-  <h3>Then comment on any other family member's profile and start sharing stories!</h3>
+    <a class="left carousel-control" href="#main-carousel-id" role="button" data-slide="prev">
+      <!-- <i class="fa fa-angle-left"></i> -->
+    </a>
 
-</div>
+    <a class="right carousel-control" href="#main-carousel-id" role="button" data-slide="next">
+      <!-- <i class="fa fa-angle-right"></i> -->
+    </a>
 
-<% if current_member %>
+  </div><!-- /#main-carousel-id -->
 
-  <h2>welcome to the family!<h2>
-  <h3><%= link_to 'see the family', members_path(current_member) %></h3>
+  <br>
 
-<% else %>
+  <hr class="featurette-divider">
 
-  <h2>not a meber of the family yet?<h2>
-  <h3><%= link_to 'join the family', new_member_path %><h3>
+  <% if current_user %>
+    <h2> Hi, <%= current_user.name %>! </h2>
+    <h3><%= link_to 'see the family', members_path(current_user) %></h3>
+    <hr class="featurette-divider">
+  <% end %>
 
-<% end %>
+  <div class="row featurette">
+    <div class="col-lg-8 col-md-offset-2 centered">
+      <h1 class='text-center'>Welcome to FamilyStory!</h1>
+      <br>
+      <p class="lead">You know those stories that all families have? FamilyStory is the place to share them!</p>
+      <p class="lead">It collects those stories from each family member and builds a narrative history of a family to last for generations to come.</p>
+      <p class="lead">It's a small way to create a broad picture of a family, to keep a record of it's many stories and to connect&mdash;over time and space&mdash;with those who mean the most.</p>
+    </div>
+  </div>
+
+  <hr class="featurette-divider">
+
+  <br>
+
+  <h1 class="featurette-heading text-center">How it Works</h1>
+
+  <br><br>
+
+  <div class="container marketing">
+
+    <div class="row">
+
+      <div class="col-lg-4">
+        <center><i class="fa fa-thumbs-o-up fa-5x"></i></center>
+        <h2>First, join the family!</h2>
+        <p>Create a profile as a family member with your name, date of birth, city you live in and a short biography.</p>
+      </div>
+
+      <div class="col-lg-4">
+        <center><i class="fa fa-video-camera fa-5x text-center pagination-centered"></i></center>
+        <h2>Next, record your video!</h2>
+        <p>This is where you answer questions about your most memorable family moments.</p>
+      </div>
+
+      <div class="col-lg-4">
+        <center><i class="fa fa-comments fa-5x text-center pagination-centered"></i></center>
+        <h2>Then, add to the story!</h2>
+        <p>Comment on any other family member's profile and start sharing stories!</p>
+      </div>
+
+    </div><!-- /.row -->
+
+    <hr class="featurette-divider">
+
+    <br>
+
+    <div class="row featurette">
+
+      <div class="col-md-5">
+        <%= image_tag "bottompic.jpg", :class => "featurette-image img-responsive" %>
+      </div>
+
+      <div class="col-md-5">
+        <h2 class="featurette-heading">Don't let your stories go unrecorded. <span class="text-muted">Hold on to them.</span></h2>
+        <p class="lead">FamilyStory helps you build a narrative history that will allow future generations to get a glimpse of where they came from and the people who came before them. Join the family and <%= link_to 'share your story.', signup_path %></p>
+      </div>
+
+    </div><!-- /.row featurette -->
+    <br>
+    <hr class="featurette-divider">
+    <br>

@@ -1,16 +1,15 @@
 var FamilyStory = FamilyStory || { Models: {}, Collections: {}, Views: {} };
 
-FamilyStory.Views.MemberListView = Backbone.View.extend({
-  initialize: function(){
-    this.listenTo(this.collection, 'all', this.render)
-  },
+var MemberListView = Backbone.View.extend({
+  el: '.page',
   render: function(){
     var that = this;
-    this.$el.empty();
-    _.each(this.collection.models, function(member){
-      var memberView = new FamilyStory.Views.MemberView({model: member});
-      that.$el.append( memberView.render().el );
+    var members = new Members();
+    members.fetch({
+      success: function(members){
+        var template = _.template($('#member-list-template').html(), {members: members.models});
+        that.$el.html(template);
+      }
     })
-    return this;
   }
 });

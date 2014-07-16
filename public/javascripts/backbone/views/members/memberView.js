@@ -1,45 +1,43 @@
 var FamilyStory = FamilyStory || { Models: {}, Collections: {}, Views: {} };
 
-FamilyStory.Views.MemberView = Backbone.View.extend({
-  initialize: function(){
-    this.listenTo(this.model, 'destroy', this.remove)
-    this.listenTo(this.model, 'all', this.render)
+var MemberEditView = Backbone.View.extend({
+  el: '.page',
+  events: {
+    'submit .edit-member-form': 'saveMember',
+    'click .delete': 'deleteMember'
   },
-  tagName: 'li',
-  template: _.template($('#member-template').html()),
-  editTemplate: _.template($('#edit-member-template').html()),
-  render: function(){
-    this.$el.html( this.template( this.model.attributes ) );
-    return this;
+  saveMember: function (ev) {
+    var memberDetails = $(ev.currentTarget).serializeObject();
+    var member = new Member();
+    member.save(memberDetails, {
+      success: function (member) {
+        router.navigate('', {trigger:true});
+      }
+    });
+    return false;
   },
-  events:{
-    'click [data-action="release"]' : 'deleteMember',
-    'click [data-action="edit"]' : 'renderEditForm',
-    'mouseover' : 'colorize1',
-    'mouseout' : 'colorize2',
+  deleteMember: function (ev) {
+    this.member.destroy({
+      success: function () {
+        console.log('destroyed');
+        router.navigate('', {trigger:true});
+      }
+    });
+    return false;
   },
-  deleteMember: function(){
-    this.model.destroy();
-    return this;
-  },
-  renderEditForm: function(){
+  render: function (options) {
     var that = this;
-    this.$el.html( this.editTemplate( this.model.attributes ) );
-    this.$el.find('form').on('submit', function(e){
-      e.preventDefault();
-      var nameField = that.$el.find('input');
-      var newName = nameField.val();
-      nameField.val('');
-      that.model.save();
-    })
-    return this;
-  },
-  colorize1: function(){
-    this.$el.css('background-color', 'steelblue');
-    return this;
-  },
-  colorize2: function(){
-    this.$el.css('background-color', 'slategray');
-    return this;
+    if(options.id) {
+      that.member = new Member({id: options.id});
+      that.member.fetch({
+        success: function (member) {
+          var template = _.template($('#edit-member-template').html(), {member: member});
+          that.$el.html(template);
+        }
+      })
+    } else {
+      var template = _.template($('#edit-member-template').html(), {member: null});
+      that.$el.html(template);
+    }
   }
 });

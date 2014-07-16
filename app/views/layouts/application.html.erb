@@ -1,34 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>FamilyStory</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamilyStory</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <nav>
-    <%= link_to 'FamilyStory', root %>
-    <span class="right">
-      <% if current_member %>
-        <a href="/members/<%= current_member.id %>/edit">edit profile</a>
-        <%= link_to 'logout', logout_path, method: :delete %>
-      <% else %>
-        <%= link_to 'signup', signup_path %>
-        <%= link_to 'login', login_path %>
-      <% end %>
-    </span>
-  </nav>
+    <div class="navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="nav-collapse">
+            <ul class="nav navbar-nav">
+              <li><%= link_to 'FamilyStory', root_path, :class => "brand" %></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <% if current_user %>
+                  <li><a href="/members/<%= current_user.id %>/edit">edit profile</a></li>
+                  <li><%= link_to 'logout', logout_path, method: :delete%></li>
+                <% else %>
+                  <li><%= link_to 'Not a member yet? join the family!', signup_path %></li>
+                  <li><%= link_to 'login', login_path %></li>
+                <% end %>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar-inner -->
+    </div><!--/.navbar-inverse -->
 
-  <div class="container">
-    <% if current_member %>
-      <p> Hi, <%= current_member.name %> ! </p>
-    <% else %>
-      <%= link_to 'Not a member yet? join the family!', signup_path %>
-    <% end %>
-    <%= yield %>
-  </div>
+    <div class="container">
 
-</body>
+      <div class="row">
+
+        <%= yield %>
+
+      </div><!--/row-->
+
+    </div> <!-- /container -->
+
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&middot; everything by Chris Heuberger &middot;</p>
+    </footer>
+
+  </body>
 </html>

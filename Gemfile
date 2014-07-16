@@ -45,3 +45,8 @@ group :development, :test do
 end
 
 gem 'sorcery'
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"
+gem 'font-awesome-rails'
+gem 'font-awesome-less'

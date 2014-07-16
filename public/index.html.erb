@@ -4,11 +4,15 @@
     <meta charset="utf-8">
 
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="http://assets.ziggeo.com/css/ziggeo-betajs-player.min.css" />
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.1.1/css/bootstrap.min.css">
     <style>
+      ziggeo {
+        margin: 5px;
+        padding: 5px;
+        float:left;
+      }
       .video-recorder-message-view {
-        background-color: gray
+        background-color: gray;
       }
       .video-uploader-upload-button-view {
         color: white;
@@ -18,7 +22,6 @@
       }
     </style>
 
-    <script src="http://assets.ziggeo.com/js/ziggeo-jquery-json2-betajs-player.min.js"></script>
     <script type="text/javascript" src='javascripts/libraries/jquery.js'></script>
     <script type="text/javascript" src='javascripts/libraries/underscore.js'></script>
     <script type="text/javascript" src='javascripts/libraries/backbone.js'></script>
@@ -64,7 +67,7 @@
       <label>city</label>
       <input type='text' name='city' value="<%= member ? member.get('city') : '' %>" />
       <label>bio</label>
-      <input type='text' name='bio' value="<%= member ? member.get('bio') : '' %>" />
+      <textarea type='text' name='bio' value="<%= member ? member.get('bio') : '' %>" />
       <hr />
       <button type='submit' class='btn'><%= member ? 'update' : 'create' %></button>
       <% if(member) { %>
@@ -77,47 +80,15 @@
   </head>
   <body>
 
-  <form class='member-form'>
-    <label>member name</label>
-    <input type="text" name='member-name'>
-    <input type="submit" value="submit">
-  </form>
+  <div class="container">
 
-  <div class='container members'>
     <h1>Family Members</h1>
     <hr />
     <div class='page'></div>
+    <ul class='members'></ul>
+    <hr />
+
   </div>
-
-  <ziggeo ziggeo-width=320
-          ziggeo-height=240>
-  </ziggeo>
-
-  <ziggeo ziggeo-video="_sample_video"
-          ziggeo-width=320
-          ziggeo-height=240>
-  </ziggeo>
-
-  <script>
-
-    ZiggeoApi.Events.on("submitted", function (data) {
-      alert("Submitted a new video with token '" + data.video.token + "'!");
-    });
-
-    ZiggeoApi.Streams.accept(video_token, stream_token, {
-        success: function (args, result) {
-        // Success
-      },
-        failure: function (args, error) {
-        // Failure
-      }
-    });
-
-    ZiggeoApi.Styles.play_button_vertical_align = "center"; // "top" or "bottom"
-    ZiggeoApi.Styles.play_button_horizontal_align = "center"; // "left" or "right"
-    ZiggeoApi.Styles.play_button_class = "ziggeo-play-button"; // "your-custom-css-class"
-
-  </script>
 
   </body>
 </html>

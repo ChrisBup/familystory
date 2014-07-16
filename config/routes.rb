@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   get '/sessions' => 'sessions#create', as: 'sessions'
   get '/logout' => 'sessions#destroy', as: 'logout'
   get '/signup' => 'members#new', as: 'signup'
-  get '/profile' => 'members#profile', as: 'profile'
+  get '/family' => 'family#index', as: 'family'
 end
