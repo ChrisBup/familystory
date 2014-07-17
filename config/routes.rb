@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/login' => 'sessions#new', as: 'login'
   get '/sessions' => 'sessions#create', as: 'sessions'
-  get '/logout' => 'sessions#destroy', as: 'logout'
+  post 'sessions' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy', as: 'logout'
+  get '/profile' => 'members#profile', as: 'profile'
   get '/signup' => 'members#new', as: 'signup'
   get '/family' => 'family#index', as: 'family'
 end

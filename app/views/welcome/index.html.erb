@@ -1,3 +1,7 @@
+  <% if current_member %>
+    <center><h3 class='see-family'><%= link_to 'see the family', family_path %></h3></center>
+  <% end %>
+
   <div id="main-carousel-id" class="carousel slide" data-ride="carousel">
 
     <div class="carousel-inner">
@@ -57,18 +61,12 @@
 
   <hr class="featurette-divider">
 
-  <% if current_user %>
-    <h2> Hi, <%= current_user.name %>! </h2>
-    <h3><%= link_to 'see the family', members_path(current_user) %></h3>
-    <hr class="featurette-divider">
-  <% end %>
-
   <div class="row featurette">
     <div class="col-lg-8 col-md-offset-2 centered">
       <h1 class='text-center'>Welcome to FamilyStory!</h1>
       <br>
       <p class="lead">You know those stories that all families have? FamilyStory is the place to share them!</p>
-      <p class="lead">It collects those stories from each family member and builds a narrative history of a family to last for generations to come.</p>
+      <p class="lead">It collects those stories from each family member in their own words and builds a narrative history of a family to last for generations to come.</p>
       <p class="lead">It's a small way to create a broad picture of a family, to keep a record of it's many stories and to connect&mdash;over time and space&mdash;with those who mean the most.</p>
     </div>
   </div>
@@ -87,31 +85,33 @@
 
       <div class="col-lg-4">
         <center><i class="fa fa-thumbs-o-up fa-5x"></i></center>
-        <h2>First, join the family!</h2>
-        <p>Create a profile as a family member with your name, date of birth, city you live in and a short biography.</p>
+        <center><h2>First, join the family!</h2>
+        <p>Create a profile as a family member with your info and a short biography. This will be your own story and a way for distant relatives to read about who you are.</p>
       </div>
 
       <div class="col-lg-4">
         <center><i class="fa fa-video-camera fa-5x text-center pagination-centered"></i></center>
-        <h2>Next, record your video!</h2>
-        <p>This is where you answer questions about your most memorable family moments.</p>
+        <center><h2>Next, record a video!</h2></center>
+        <p>This is where you answer questions about your most memorable family moments. Then, you can see how everyone else answered the same questions!</p>
       </div>
 
       <div class="col-lg-4">
         <center><i class="fa fa-comments fa-5x text-center pagination-centered"></i></center>
-        <h2>Then, add to the story!</h2>
-        <p>Comment on any other family member's profile and start sharing stories!</p>
+        <center><h2>Then, add to the story!</h2></center>
+        <p>Comment on any other family member's profile. This is where you share your stories about others or just record your thoughts and memories of a family member.</p>
       </div>
 
     </div><!-- /.row -->
 
+    <br><br>
+
     <hr class="featurette-divider">
 
-    <br>
+    <br><br>
 
     <div class="row featurette">
 
-      <div class="col-md-5">
+      <div class="col-md-5 col-md-offset-1">
         <%= image_tag "bottompic.jpg", :class => "featurette-image img-responsive" %>
       </div>
 
@@ -124,3 +124,8 @@
     <br>
     <hr class="featurette-divider">
     <br>
+
+    <footer>
+      <p class="pull-right"><a href="#">Back to top</a></p>
+      <p>&middot; everything by Chris Heuberger &middot;</p>
+    </footer>

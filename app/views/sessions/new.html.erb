@@ -1,4 +1,15 @@
-<div class="form-div">
-  <h2>login</h2>
-  <%= render 'form' %>
+<div class="row featurette">
+  <div class="col-lg-8 col-md-offset-4 centered">
+    <div class="form-group">
+      <h2>family member login</h2>
+      <br>
+      <%= form_tag sessions_path do %>
+        <%= label_tag :email %>
+        <%= text_field_tag :email %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password %><br><br>
+        <%= submit_tag 'login' %>
+      <% end %>
+    </div>
+  </div>
 </div>

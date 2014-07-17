@@ -16,15 +16,15 @@
         <div class="container">
           <div class="nav-collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to 'FamilyStory', root_path, :class => "brand" %></li>
+              <li><h3 class='logotype'><%= link_to 'FamilyStory', root_path %></h3></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <% if current_user %>
-                  <li><a href="/members/<%= current_user.id %>/edit">edit profile</a></li>
-                  <li><%= link_to 'logout', logout_path, method: :delete%></li>
-                <% else %>
-                  <li><%= link_to 'Not a member yet? join the family!', signup_path %></li>
+              <% if !current_member %>
+                  <li><%= link_to 'join the family!', signup_path %></li>
                   <li><%= link_to 'login', login_path %></li>
+                <% else %>
+                  <li><a href="/members/<%= current_member.id %>/edit">edit profile</a></li>
+                  <li><%= link_to 'logout', logout_path, method: :delete%></li>
                 <% end %>
             </ul>
           </div><!--/.nav-collapse -->
@@ -36,16 +36,24 @@
 
       <div class="row">
 
+        <div>
+          <% if alert %>
+            <h1 class='alert'>
+              <%= flash.now[:alert] %>
+            </h1>
+          <% end %>
+          <% if notice %>
+            <h1 class='notice'>
+              <%= flash.now[:notice] %>
+            </h1>
+          <% end %>
+        </div>
+
         <%= yield %>
 
       </div><!--/row-->
 
     </div> <!-- /container -->
-
-    <footer>
-      <p class="pull-right"><a href="#">Back to top</a></p>
-      <p>&middot; everything by Chris Heuberger &middot;</p>
-    </footer>
 
   </body>
 </html>

@@ -1,21 +1,12 @@
-<div class="form-div">
-
-  <h2>join the family</h2>
-
-  <%= render 'members/form' %>
-
-  <% if @member.errors.any? %>
-    <%= render 'members/errors' %>
-  <% end %>
-
-  <h2>create your video</h2>
-
-  <h3>Once you've filled in your info, it’s time to create your short profile video. This is where you share your favorite stories about your family. What should you say? Whatever you want! Just be sure to include your answer to these three questions. And don’t forget to introduce yourself!</h3>
-
-  <h2>1. What do you love most about your family? (e.g. how everyone has the same name? how everyone drives a Volkswagon?)</h2>
-
-  <h2>2. What’s your favorite story or anecdote about your family? (e.g. visiting relatives in Italy? how you met your significant other?)</h2>
-
-  <h2>3. What will you never forget about a particular family member? (e.g. your nonna’s cooking? your uncle’s sense of humor?)</h2>
-
+<div class="row featurette">
+  <div class="col-lg-8 col-md-offset-4 centered">
+    <div class="form-group">
+      <h2>join the family</h2>
+      <br>
+      <%= render 'members/form' %>
+      <% if @member.errors.any? %>
+      <%= render 'members/errors' %>
+      <% end %>
+    </div>
+  </div>
 </div>

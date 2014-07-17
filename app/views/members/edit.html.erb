@@ -1,13 +1,14 @@
-<div class="form-div">
-
-  <h2>edit profile</h2>
-
-  <% if @member.errors.any? %>
-    <%= render 'errors' %>
-  <% end %>
-
-  <%= render 'form' %>
-
-  <h2>create your video</h2>
-
+<div class="row featurette">
+  <div class="col-lg-4 col-md-offset-4 centered">
+      <h2>edit profile</h2>
+      <br>
+      <% if @member.errors.any? %>
+        <%= render 'errors' %>
+      <% end %>
+      <%= render 'form' %>
+  </div>
 </div>
+
+<hr class="featurette-divider">
+
+<center><h2>create your video here</h2><center>
