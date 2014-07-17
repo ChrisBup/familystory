@@ -1,12 +1,12 @@
 require 'net/http'
 require 'json'
 
-require_relative "classes/ZiggeoConfig"
-require_relative "classes/ZiggeoConnect"
-require_relative "classes/ZiggeoVideos"
-require_relative "classes/ZiggeoStreams"
-require_relative "classes/ZiggeoAuthtokens"
-require_relative "classes/ZiggeoAuth"
+require_relative "ZiggeoConfig"
+require_relative "ZiggeoConnect"
+require_relative "ZiggeoVideos"
+require_relative "ZiggeoStreams"
+require_relative "ZiggeoAuthtokens"
+require_relative "ZiggeoAuth"
 
 @ziggeo = Ziggeo.new(ENV.fetch('ZIGGEO_APPLICATION_TOKEN'),
   ENV.fetch('ZIGGEO_PRIVATE_KEY'),

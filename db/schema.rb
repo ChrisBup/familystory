@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716215330) do
+ActiveRecord::Schema.define(version: 20140717152444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,7 @@ ActiveRecord::Schema.define(version: 20140716215330) do
     t.string   "bio"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",            limit: 1000
-    t.string   "password",         limit: 1000
-    t.string   "password_digest"
-    t.string   "crypted_password",              null: false
-    t.string   "salt",                          null: false
   end
-
-  add_index "members", ["email"], name: "index_members_on_email", unique: true, using: :btree
 
   create_table "videos", force: true do |t|
     t.string   "caption"
