@@ -51,3 +51,7 @@ gem 'font-awesome-rails'
 gem 'font-awesome-less'
 gem 'underscore-rails'
 gem "rails-backbone"
+
+group :production do
+  gem 'rails_12factor'
+end
