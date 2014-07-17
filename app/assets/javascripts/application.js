@@ -12,10 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
-//= require_tree .
 //= require underscore
 //= require backbone
+//= require backbone_rails_sync
+//= require backbone_datalink
+//
+//= require backbone/app
+//= require backbone/family_story
+//= require backbone/models/member
+//= require backbone/collections/memberCollection
+//= require backbone/views/members/memberView
+//= require backbone/views/members/memberListView
 //
 //= require twitter/bootstrap
 //= require twitter/bootstrap/bootstrap-transition
@@ -23,6 +30,7 @@
 //= require twitter/bootstrap/bootstrap-modal
 //= require twitter/bootstrap/bootstrap-button
 //= require twitter/bootstrap/bootstrap-collapse
+//= require_tree .
 
 $(function(){
   $('.carousel').carousel();
