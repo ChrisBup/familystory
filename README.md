@@ -10,7 +10,7 @@ Welcome to the family!
 
 ## How it Works
 
-FamilyStory allows users to create a profile as a family member with their information and record a video introduction where they answer questions about themselves and share their favorite stories about their family. They can also comment on any other family member's profile.
+FamilyStory allows users to create a profile as a family member with their information, answer questions about themselves and share their favorite stories about their family. They can also upload photos of their family and comment on any other family member's profile.
 
 ## Data Model:
 
@@ -21,12 +21,10 @@ FamilyStory allows users to create a profile as a family member with their infor
 | city    	 |
 | bio        |
 
-
 | Video    	  |
 | ------------|
 | member_id 	|
 | caption     |
-
 
 | Comment    	|
 | ------------|
