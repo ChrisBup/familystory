@@ -1,3 +1,3 @@
 ## Strong Opinions / Loosely Held
 
-A Sinatra app for family debates
+A Vue app for surveys and debate.
